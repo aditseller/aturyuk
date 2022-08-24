@@ -55,14 +55,54 @@
 <br class="my-4">
   
   <div class="col-12">
-  <label for="address2" class="form-label"><b>Jumlah Total Cicilan</b></label>
+  <label for="address2" class="form-label"><b>Cicilan 1</b></label>
   <div class="input-group has-validation">
   <span class="input-group-text" style="">Rp</span>
-  <input type="number" class="form-control" name="cicilan" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  <input type="number" class="form-control" name="cicilan1" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  </div>
+  </div>
+	
+	<div class="col-12">
+  <label for="address2" class="form-label"><b>Cicilan 2</b></label>
+  <div class="input-group has-validation">
+  <span class="input-group-text" style="">Rp</span>
+  <input type="number" class="form-control" name="cicilan2" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  </div>
+  </div>
+	
+		<div class="col-12">
+  <label for="address2" class="form-label"><b>Cicilan 3</b></label>
+  <div class="input-group has-validation">
+  <span class="input-group-text" style="">Rp</span>
+  <input type="number" class="form-control" name="cicilan3" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  </div>
+  </div>
+	
+		<div class="col-12">
+  <label for="address2" class="form-label"><b>Cicilan 4</b></label>
+  <div class="input-group has-validation">
+  <span class="input-group-text" style="">Rp</span>
+  <input type="number" class="form-control" name="cicilan4" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  </div>
+  </div>
+	
+		<div class="col-12">
+  <label for="address2" class="form-label"><b>Cicilan 5</b></label>
+  <div class="input-group has-validation">
+  <span class="input-group-text" style="">Rp</span>
+  <input type="number" class="form-control" name="cicilan5" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
   </div>
   </div>
   
    <hr class="my-4">
+	
+	  <div class="col-12">
+  <label for="address2" class="form-label"><b>Jumlah Total Cicilan</b></label>
+  <div class="input-group has-validation">
+  <span class="input-group-text" style="">Rp</span>
+   <input type="text" class="form-control" name="cicilan" value="" readonly="readonly" style="border:none;  background:yellow;" disabled>
+    </div>
+  </div>
 
    <div class="col-12">
   <label for="address2" class="form-label"><b>Sisa Pendapatan Sementara</b></label>
@@ -104,7 +144,13 @@
 <script>
    pendapatankotor = document.formD.pendapatan.value;
    document.formD.txtDisplay.value = pendapatankotor;
-   totalcicilan = document.formD.cicilan.value;
+	cicilan1 = document.formD.cicilan1.value;
+	cicilan2 = document.formD.cicilan2.value;
+	cicilan3 = document.formD.cicilan3.value;
+	cicilan4 = document.formD.cicilan4.value;
+	cicilan5 = document.formD.cicilan5.value;
+	
+   totalcicilan = cicilan1 + cicilan2 + cicilan3 + cicilan4 + cicilan5;
    document.formD.txtDisplay.value = totalcicilan;
    function OnChange(value){
      pendapatankotor = document.formD.pendapatan.value;
