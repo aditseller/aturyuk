@@ -11,7 +11,7 @@
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">ATUR YUK! (Atur Finansialmu)</a>
+    <a class="navbar-brand" href="#"><img src="https://raw.githubusercontent.com/tezaraditya/aturyuk/main/aturyuklogo.png" alt="..."  style="width:50px; height:auto;">&nbsp; &nbsp; &nbsp;<b style="font-size:2em;margin-top:10px">Atur Yuk</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,7 +40,9 @@
 
 <hr class="my-4">
 	<br class="my-4">
-	<img src="https://raw.githubusercontent.com/tezaraditya/aturyuk/main/aturyuk.png" alt="..." style="width:10%;height:10%;">
+	<br class="my-4">
+	
+	
 
 <form id="formD" name="formD" action="" method="post" enctype="multipart/form-data">
 
@@ -58,7 +60,7 @@
   <label for="address2" class="form-label"><b>Cicilan 1</b></label>
   <div class="input-group has-validation">
   <span class="input-group-text" style="">Rp</span>
-  <input type="number" class="form-control" name="cicilan1" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  <input type="number" class="form-control" name="cicilansatu" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
   </div>
   </div>
 	
@@ -66,7 +68,7 @@
   <label for="address2" class="form-label"><b>Cicilan 2</b></label>
   <div class="input-group has-validation">
   <span class="input-group-text" style="">Rp</span>
-  <input type="number" class="form-control" name="cicilan2" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  <input type="number" class="form-control" name="cicilandua" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
   </div>
   </div>
 	
@@ -74,7 +76,7 @@
   <label for="address2" class="form-label"><b>Cicilan 3</b></label>
   <div class="input-group has-validation">
   <span class="input-group-text" style="">Rp</span>
-  <input type="number" class="form-control" name="cicilan3" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  <input type="number" class="form-control" name="cicilantiga" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
   </div>
   </div>
 	
@@ -82,7 +84,7 @@
   <label for="address2" class="form-label"><b>Cicilan 4</b></label>
   <div class="input-group has-validation">
   <span class="input-group-text" style="">Rp</span>
-  <input type="number" class="form-control" name="cicilan4" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  <input type="number" class="form-control" name="cicilanempat" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
   </div>
   </div>
 	
@@ -90,25 +92,19 @@
   <label for="address2" class="form-label"><b>Cicilan 5</b></label>
   <div class="input-group has-validation">
   <span class="input-group-text" style="">Rp</span>
-  <input type="number" class="form-control" name="cicilan5" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
+  <input type="number" class="form-control" name="cicilanlima" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" style="border:none; " required>
   </div>
   </div>
   
    <hr class="my-4">
 	
-	  <div class="col-12">
-  <label for="address2" class="form-label"><b>Jumlah Total Cicilan</b></label>
-  <div class="input-group has-validation">
-  <span class="input-group-text" style="">Rp</span>
-   <input type="text" class="form-control" name="cicilan" value="" readonly="readonly" style="border:none;  background:yellow;" disabled>
-    </div>
-  </div>
+	 
 
    <div class="col-12">
   <label for="address2" class="form-label"><b>Sisa Pendapatan Sementara</b></label>
   <div class="input-group has-validation">
   <span class="input-group-text" style="">Rp</span>
-   <input type="text" class="form-control" name="txtDisplay" value="" readonly="readonly" style="border:none;  background:yellow;" disabled>
+   <input type="text" class="form-control" name="sisasementara" value="" readonly="readonly" style="border:none;  background:yellow;" disabled>
     </div>
   </div>
   
@@ -143,20 +139,23 @@
 
 <script>
    pendapatankotor = document.formD.pendapatan.value;
-   document.formD.txtDisplay.value = pendapatankotor;
-	cicilan1 = document.formD.cicilan1.value;
-	cicilan2 = document.formD.cicilan2.value;
-	cicilan3 = document.formD.cicilan3.value;
-	cicilan4 = document.formD.cicilan4.value;
-	cicilan5 = document.formD.cicilan5.value;
+   document.formD.sisasementara.value = pendapatankotor;
 	
-   totalcicilan = cicilan1 + cicilan2 + cicilan3 + cicilan4 + cicilan5;
-   document.formD.txtDisplay.value = totalcicilan;
+   
+   
    function OnChange(value){
      pendapatankotor = document.formD.pendapatan.value;
-     totalcicilan = document.formD.cicilan.value;
-     sisapendapatan = pendapatankotor - totalcicilan;
-     document.formD.txtDisplay.value = sisapendapatan.toLocaleString();
+	 
+	 
+	cicilanSatu = document.formD.cicilansatu.value;
+	cicilanDua = document.formD.cicilandua.value;
+	cicilanTiga = document.formD.cicilantiga.value;
+	cicilanEmpat = document.formD.cicilanempat.value;
+	cicilanLima = document.formD.cicilanlima.value;
+
+	 
+     sisapendapatan = pendapatankotor - cicilanSatu - cicilanDua - cicilanTiga - cicilanEmpat - cicilanLima ;
+     document.formD.sisasementara.value = sisapendapatan.toLocaleString();
 	 savemoney = sisapendapatan * (20/100);
      document.formD.nabung.value = savemoney.toLocaleString();
 	 sisauang = sisapendapatan - savemoney;
